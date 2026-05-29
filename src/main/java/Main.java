@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Objects
+
         Marketer marketer1 = new Marketer("Abel", 22, "Piazza", 15);
         Supervisor supervisor1 = new Supervisor("Sara", 30, 5);
 
