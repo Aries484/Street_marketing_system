@@ -29,8 +29,7 @@ public class Marketer extends Person {
 
     @Override
     public void work() {
-
-        System.out.println(getName() + " is promoting products on the street.");
+        System.out.println("--> " + getName() + " is promoting products on the street and he/she sold " + getSales() + " products yet.");
     }
 
     public void displayInfo() {

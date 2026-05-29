@@ -16,8 +16,10 @@ public class Main {
 
         System.out.println(" --- Campaign Created ---");
                 campaign.showCampaign();
+        System.out.println("-----------------------");
+        System.out.println();
 
-        System.out.print(" Enter marketer name: ");
+        System.out.print("Enter marketer name: ");
         String mName = input.nextLine();
 
         System.out.print("Enter marketer age: ");
@@ -35,7 +37,8 @@ public class Main {
 
         input.nextLine();
 
-        System.out.print(" Enter supervisor name: ");
+        System.out.println("-----------------------");
+        System.out.print("Enter supervisor name: ");
         String sName = input.nextLine();
 
         System.out.print("Enter supervisor age: ");
@@ -43,20 +46,24 @@ public class Main {
 
         System.out.print("Enter team size: ");
         int teamSize = input.nextInt();
+        System.out.println();
 
         Supervisor supervisor = new Supervisor(sName, sAge, teamSize);
 
         System.out.println(" --- System Output ---");
 
                 marketer.displayInfo();
+        System.out.println("-----------------------");
         System.out.println();
         supervisor.displaySupervisorInfo();
+        System.out.println("-----------------------");
 
         System.out.println();
 
         Person p1 = marketer;
         Person p2 = supervisor;
 
+        System.out.println(" ---- Final Info ----");
         p1.work();
         p2.work();
 
@@ -69,6 +76,7 @@ public class Main {
 
         System.out.println("Marketer Bonus: " + bonus1);
         System.out.println("Supervisor Bonus: " + bonus2);
+        System.out.println("-----------------------");
 
         input.close();
     }

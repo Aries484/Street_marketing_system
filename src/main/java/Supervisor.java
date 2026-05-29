@@ -19,7 +19,7 @@ public class Supervisor extends Person {
 
     @Override
     public void work() {
-        System.out.println(getName() + " is supervising street marketers.");
+        System.out.println("--> " + getName() + " is supervising his " + getTeamSize() + " street marketers.");
     }
 
     public void displaySupervisorInfo() {
