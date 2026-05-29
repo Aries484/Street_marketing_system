@@ -6,7 +6,6 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        // === User Input for Campaign ===
         System.out.print("Enter campaign name: ");
         String campaignName = input.nextLine();
 
@@ -18,14 +17,13 @@ public class Main {
         System.out.println(" --- Campaign Created ---");
                 campaign.showCampaign();
 
-        // === User Input for Marketer ===
         System.out.print(" Enter marketer name: ");
         String mName = input.nextLine();
 
         System.out.print("Enter marketer age: ");
         int mAge = input.nextInt();
 
-        input.nextLine(); // clear buffer
+        input.nextLine();
 
         System.out.print("Enter marketer location: ");
         String location = input.nextLine();
@@ -35,8 +33,7 @@ public class Main {
 
         Marketer marketer = new Marketer(mName, mAge, location, sales);
 
-        // === User Input for Supervisor ===
-        input.nextLine(); // clear buffer
+        input.nextLine();
 
         System.out.print(" Enter supervisor name: ");
         String sName = input.nextLine();
@@ -51,14 +48,12 @@ public class Main {
 
         System.out.println(" --- System Output ---");
 
-                // Display info
                 marketer.displayInfo();
         System.out.println();
         supervisor.displaySupervisorInfo();
 
         System.out.println();
 
-        // Polymorphism (runtime)
         Person p1 = marketer;
         Person p2 = supervisor;
 
@@ -67,7 +62,6 @@ public class Main {
 
         System.out.println();
 
-        // Bonus calculation
         SalesCalculator calculator = new SalesCalculator();
 
         int bonus1 = calculator.calculateBonus(sales);
