@@ -29,6 +29,7 @@ public class Marketer extends Person {
 
     @Override
     public void work() {
+
         System.out.println(getName() + " is promoting products on the street.");
     }
 

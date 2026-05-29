@@ -17,7 +17,6 @@ public class Supervisor extends Person {
         }
     }
 
-    // Runtime Polymorphism
     @Override
     public void work() {
         System.out.println(getName() + " is supervising street marketers.");

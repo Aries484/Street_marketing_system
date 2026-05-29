@@ -1,0 +1,26 @@
+name: Automated PR Review Pipeline
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-test-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build Project
+        run: mvn clean install
+
+      - name: Run Tests
+        run: mvn test

@@ -1,6 +1,5 @@
 public class Person {
 
-
     protected String name;
     protected int age;
 
@@ -10,6 +9,7 @@ public class Person {
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -28,6 +28,7 @@ public class Person {
     }
 
     public void work() {
+
         System.out.println(name + " is working.");
     }
 }
