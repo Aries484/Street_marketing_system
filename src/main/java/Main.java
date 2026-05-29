@@ -1,44 +1,81 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
 
-        Marketer marketer1 = new Marketer("Abel", 22, "Piazza", 15);
-        Supervisor supervisor1 = new Supervisor("Sara", 30, 5);
+        // === User Input for Campaign ===
+        System.out.print("Enter campaign name: ");
+        String campaignName = input.nextLine();
 
-        Campaign campaign1 = new Campaign("Summer Street Promotion", "Soft Drink");
+        System.out.print("Enter product name: ");
+        String productName = input.nextLine();
 
+        Campaign campaign = new Campaign(campaignName, productName);
 
-        campaign1.showCampaign();
+        System.out.println(" --- Campaign Created ---");
+                campaign.showCampaign();
+
+        // === User Input for Marketer ===
+        System.out.print(" Enter marketer name: ");
+        String mName = input.nextLine();
+
+        System.out.print("Enter marketer age: ");
+        int mAge = input.nextInt();
+
+        input.nextLine(); // clear buffer
+
+        System.out.print("Enter marketer location: ");
+        String location = input.nextLine();
+
+        System.out.print("Enter number of sales: ");
+        int sales = input.nextInt();
+
+        Marketer marketer = new Marketer(mName, mAge, location, sales);
+
+        // === User Input for Supervisor ===
+        input.nextLine(); // clear buffer
+
+        System.out.print(" Enter supervisor name: ");
+        String sName = input.nextLine();
+
+        System.out.print("Enter supervisor age: ");
+        int sAge = input.nextInt();
+
+        System.out.print("Enter team size: ");
+        int teamSize = input.nextInt();
+
+        Supervisor supervisor = new Supervisor(sName, sAge, teamSize);
+
+        System.out.println(" --- System Output ---");
+
+                // Display info
+                marketer.displayInfo();
+        System.out.println();
+        supervisor.displaySupervisorInfo();
 
         System.out.println();
 
-
-        marketer1.displayInfo();
-
-        System.out.println();
-
-        // Display Supervisor Info
-        supervisor1.displaySupervisorInfo();
-
-        System.out.println();
-
-
-        Person p1 = marketer1;
-        Person p2 = supervisor1;
+        // Polymorphism (runtime)
+        Person p1 = marketer;
+        Person p2 = supervisor;
 
         p1.work();
         p2.work();
 
         System.out.println();
 
-
+        // Bonus calculation
         SalesCalculator calculator = new SalesCalculator();
 
-        int bonus1 = calculator.calculateBonus(15);
-        double bonus2 = calculator.calculateBonus(2000.0, 0.15);
+        int bonus1 = calculator.calculateBonus(sales);
+        double bonus2 = calculator.calculateBonus(sales * 100.0, 0.15);
 
         System.out.println("Marketer Bonus: " + bonus1);
         System.out.println("Supervisor Bonus: " + bonus2);
+
+        input.close();
     }
 }
