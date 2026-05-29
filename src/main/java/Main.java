@@ -19,6 +19,7 @@ public class Main {
                 campaign.showCampaign();
 
         // === User Input for Marketer ===
+        // Pipeline testing
         System.out.print(" Enter marketer name: ");
         String mName = input.nextLine();
 
